@@ -20,6 +20,7 @@ namespace Api
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "products")] HttpRequest req)
         {
             var products = await productData.GetProducts();
+
             return new OkObjectResult(products);
         }
     }
